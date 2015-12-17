@@ -1,3 +1,4 @@
+import random
 
 def GetAnswerWithUnderscores(answer, letters_guessed):
     new = ''
@@ -57,22 +58,8 @@ def GetAllEnglishWords():
         line = line.rstrip()
         words_list.append(line)
     return words_list
+    
 
-
-answer = GetAllEnglishWords()
-if answer != None and 'voting' in answer:
-    text = 'PASS'
-else:
-    text = 'FAIL'
-print('GetAllEnglishWords #1: expected the word voting', text)
-if answer != None and 'triage' not in answer:
-    text = 'PASS'
-else:
-    text = 'FAIL'
-print('GetAllEnglishWords #2: did not expect triage', text)
-
-
-import random
 def GetRandomWord(words):
     return random.choice(words)
 
@@ -205,14 +192,5 @@ def StartupAndPlayVersion2():
             break
 
 
-
-'''-----------------------------------------------------------
-Extra credit exercise 4:
-1. Copy the code you wrote for Exercise 6 and paste it here, but
-   instead of calling StartupAndPlay, call StartupAndPlayVersion2.
-   DO NOT change your answer for Exercise 6!
-2. Comment out the code you wrote for Exercise 6. Again, DO NOT
-   delete the code you wrote for Exercise 6!
-'''
 if __name__ == '__main__':
     StartupAndPlayVersion2()
